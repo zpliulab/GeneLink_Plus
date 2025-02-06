@@ -18,7 +18,7 @@ parser.add_argument('--p_val', type=float, default=0.5, help='the position of th
 parser.add_argument('--use_distance_method', type=str, default='no', choices=['yes', 'no'], help='use train_val_test_set_with_distance if "yes"')
 
 parser.add_argument('--lr', type=float, default=1e-5, help='Initial learning rate.')
-parser.add_argument('--epochs', type=int, default= 5, help='Number of epoch.')
+parser.add_argument('--epochs', type=int, default= 150, help='Number of epoch.')
 parser.add_argument('--num_head', type=list, default=[3,3,3], help='Number of head attentions.')
 parser.add_argument('--alpha', type=float, default=0.2, help='Alpha for the leaky_relu.')
 parser.add_argument('--hidden_dim', type=int, default=[128,64,64,32], help='The dimension of hidden layer')
