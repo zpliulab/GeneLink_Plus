@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Wei
+    given-names: Zhang
+  - family-names: Bowen
+    given-names: Shao
+title: "GENElink2: Advancing Cell-Type-Specific Gene Regulatory Network Inference from Transcriptomics Data at Cellular Resolution"
+version: 0.0.1
+identifiers:
+  - type: GitHub
+    value: https://github.com/shenxiuqi/GENELink2
+date-released: 2024-12-18
