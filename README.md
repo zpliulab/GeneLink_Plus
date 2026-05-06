@@ -163,7 +163,7 @@ Benchmark Dataset from [BEELINE](https://doi.org/10.5281/zenodo.3378975).
 
 [Human AD snRNA-seq](https://www.synapse.org/#!Synapse\:syn22079621/).
 
-Human breast cancer.
+[Human breast cancer](https://support.10xgenomics.com/spatial-gene-expression/datasets/1.1.0/V1_Breast_Cancer_Block_A_Section_1).
 
 ### 3.2 Choosing an Appropriate Method to Construct a Ground Truth Network
 
