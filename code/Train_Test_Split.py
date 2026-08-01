@@ -91,9 +91,8 @@ def train_val_test_set(label_file, Gene_file, TF_file, train_set_file, val_set_f
     train_set = train_pos_set + train_neg_set
     train_label = tran_pos_label + tran_neg_label
 
-    train_sample = train_set.copy()
-    for i, val in enumerate(train_sample):
-        val.append(train_label[i])
+    # Fix: Create new list instead of shallow copy to avoid modifying train_set
+    train_sample = [[tf, target, label] for (tf, target), label in zip(train_set, train_label)]
     train = pd.DataFrame(train_sample, columns=['TF', 'Target', 'Label'])
     train.to_csv(train_set_file)
 
@@ -172,10 +171,10 @@ def train_val_test_set(label_file, Gene_file, TF_file, train_set_file, val_set_f
 
     test_set = test_pos_set + test_neg_set
     test_label = test_pos_label + test_neg_label
-    for i, val in enumerate(test_set):
-        val.append(test_label[i])
 
-    test_sample = pd.DataFrame(test_set, columns=['TF', 'Target', 'Label'])
+    # Fix: Create new list instead of modifying test_set directly
+    test_sample_data = [[tf, target, label] for (tf, target), label in zip(test_set, test_label)]
+    test_sample = pd.DataFrame(test_sample_data, columns=['TF', 'Target', 'Label'])
     test_sample.to_csv(test_set_file)
 
     print("Test set construction completed.")
@@ -250,9 +249,8 @@ def train_val_test_set_with_distance(label_file, Gene_file, TF_file, train_set_f
     train_set = train_pos_set + train_neg_set
     train_label = tran_pos_label + tran_neg_label
 
-    train_sample = train_set.copy()
-    for i, val in enumerate(train_sample):
-        val.append(train_label[i])
+    # Fix: Create new list instead of shallow copy to avoid modifying train_set
+    train_sample = [[tf, target, label] for (tf, target), label in zip(train_set, train_label)]
     train = pd.DataFrame(train_sample, columns=['TF', 'Target', 'Label'])
     train.to_csv(train_set_file)
 
@@ -314,10 +312,10 @@ def train_val_test_set_with_distance(label_file, Gene_file, TF_file, train_set_f
 
     test_set = test_pos_set + test_neg_set
     test_label = test_pos_label + test_neg_label
-    for i, val in enumerate(test_set):
-        val.append(test_label[i])
 
-    test_sample = pd.DataFrame(test_set, columns=['TF', 'Target', 'Label'])
+    # Fix: Create new list instead of modifying test_set directly
+    test_sample_data = [[tf, target, label] for (tf, target), label in zip(test_set, test_label)]
+    test_sample = pd.DataFrame(test_sample_data, columns=['TF', 'Target', 'Label'])
     test_sample.to_csv(test_set_file)
 
 
